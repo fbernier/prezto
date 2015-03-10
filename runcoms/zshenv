@@ -9,3 +9,22 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# CUSTOM:
+source /usr/local/share/chruby/chruby.sh
+chruby 2.2.0
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# ruby 2.1.1 tuning for less memory
+export RUBY_GC_HEAP_INIT_SLOTS=600000
+export RUBY_GC_HEAP_FREE_SLOTS=600000
+export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+export RUBY_GC_HEAP_GROWTH_MAC_SLOTS=300000
+export RUBY_GC_OLDOBJECT_LIMIT_FACTOR=1.5
+
+export CFLAGS="-march=native -O2"
+export CXXFLAGS="${CFLAGS}"
+
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so
+
+export PATH=~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.3/bin:/opt/happy/1.19.4/bin:/opt/alex/3.1.3/bin:$PATH
