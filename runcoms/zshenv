@@ -9,3 +9,10 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+#CUSTOM
+export PATH="$HOME/.cargo/bin:$PATH"
+source /usr/share/chruby/chruby.sh
+alias tmux='env TERM=xterm-256color tmux -2'
+alias v='nvim'
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1

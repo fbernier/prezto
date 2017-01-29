@@ -11,3 +11,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+chruby 2.3.6
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/home/fbernier/.local/bin:$PATH"
+
+# OPAM configuration
+. /home/fbernier/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
