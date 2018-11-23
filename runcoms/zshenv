@@ -12,7 +12,7 @@ fi
 
 #CUSTOM
 export PATH="$HOME/.cargo/bin:$PATH"
+export RUSTC_WRAPPER=sccache
 source /usr/share/chruby/chruby.sh
 alias tmux='env TERM=xterm-256color tmux -2'
 alias v='nvim'
-export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
