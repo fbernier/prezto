@@ -14,5 +14,5 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUSTC_WRAPPER=sccache
 source /usr/share/chruby/chruby.sh
-alias tmux='env TERM=xterm-256color tmux -2'
+alias tmux='env TERM=xterm-256color tmux -u -2'
 alias v='nvim'
